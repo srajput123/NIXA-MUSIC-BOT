@@ -2,21 +2,6 @@ import os
 import aiofiles
 import aiohttp
 from PIL import Image, ImageDraw, ImageFont
-from random import choice
-
-NIXA = [
-    "Process/ImageFont/LightGreen.png",
-    "Process/ImageFont/Red.png",
-    "Process/ImageFont/Black.png",
-    "Process/ImageFont/Blue.png",
-    "Process/ImageFont/Grey.png",
-    "Process/ImageFont/Green.png",
-    "Process/ImageFont/Lightblue.png",
-    "Process/ImageFont/Lightred.png",
-    "Process/ImageFont/Purple.png",
-    "Process/ImageFont/foreground.png",
-   ]
-
 
 
 def changeImageSize(maxWidth, maxHeight, image):
