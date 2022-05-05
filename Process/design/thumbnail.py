@@ -4,7 +4,7 @@ import aiohttp
 from PIL import Image, ImageDraw, ImageFont
 from random import choice
 
-ZAID = [
+NIXA = [
     "Process/ImageFont/LightGreen.png",
     "Process/ImageFont/Red.png",
     "Process/ImageFont/Black.png",
