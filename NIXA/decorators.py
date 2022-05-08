@@ -43,7 +43,7 @@ def sudo_users_only(func: Callable) -> Callable:
 
 
 def humanbytes(size):
-    """Convert Bytes To Bytes So That Human Can Read It"""
+    """ᴄᴏɴᴠᴇʀᴛ ʙʏᴛᴇs ᴛᴏ ʙʏᴛᴇs sᴏ ᴛʜᴀᴛ ʜᴜᴍᴀɴ ᴄᴀɴ ʀᴇᴀᴅ ɪᴛ"""
     if not size:
         return ""
     power = 2 ** 10
