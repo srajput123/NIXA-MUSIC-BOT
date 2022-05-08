@@ -100,10 +100,10 @@ def purge(_, m: Message):
             msgs.append(x)
 
         bot.delete_messages(m.chat.id, msgs)
-        m.reply("Purge Complete")
+        m.reply("ᴘᴜʀɢᴇ ᴄᴏᴍᴘʟᴇᴛᴇ")
 
     elif not m.reply_to_message and is_admin(m.chat.id, m.from_user.id):
-        m.reply("Reply to a Message!")
+        m.reply("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ!")
 
     else:
         m.reply("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ")
