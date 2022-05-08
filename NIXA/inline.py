@@ -11,8 +11,8 @@ from config import GROUP_SUPPORT, UPDATES_CHANNEL
 def stream_markup(user_id):
   buttons = [
     [
-      InlineKeyboardButton(text="• Mᴇɴᴜ", callback_data=f'cbmenu | {user_id}'),
-      InlineKeyboardButton(text="• Cʟᴏsᴇ", callback_data=f'cls'),
+      InlineKeyboardButton(text="• ᴍᴇɴᴜ", callback_data=f'cbmenu | {user_id}'),
+      InlineKeyboardButton(text="• ᴄʟᴏsᴇ", callback_data=f'cls'),
     ],
     [
       InlineKeyboardButton(text="✨ ɢʀᴏᴜᴘ", url=f"https://t.me/{GROUP_SUPPORT}"),
@@ -34,7 +34,7 @@ def menu_markup(user_id):
       InlineKeyboardButton(text="🔊", callback_data=f'cbunmute | {user_id}'),
     ],
     [
-      InlineKeyboardButton(text="🗑 Close", callback_data='cls'),
+      InlineKeyboardButton(text="🗑 ᴄʟᴏsᴇ", callback_data='cls'),
     ]
   ]
   return buttons
@@ -44,7 +44,7 @@ close_mark = InlineKeyboardMarkup(
   [
     [
       InlineKeyboardButton(
-        "🗑 Close", callback_data="cls"
+        "🗑 ᴄʟᴏsᴇ", callback_data="cls"
       )
     ]
   ]
@@ -55,7 +55,7 @@ back_mark = InlineKeyboardMarkup(
   [
     [
       InlineKeyboardButton(
-        "🔙 Go Back", callback_data="cbmenu"
+        " ɢᴏ ʙᴀᴄᴋ", callback_data="cbmenu"
       )
     ]
   ]
