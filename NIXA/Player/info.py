@@ -21,10 +21,10 @@ def info(_, message):
         user = k.id
 
     if user == OWNER:
-        status = "This Person is my Owner"
+        status = "ᴛʜɪs ᴘᴇʀsᴏɴ ɪs ᴍʏ ᴏᴡɴᴇʀ"
 
     elif user in sudos:
-        status = "This person is one of my Sudo users !"
+        status = "ᴛʜɪs ᴘᴇʀsᴏɴ ɪs ᴏɴᴇ ᴏғ ᴍʏ sᴜᴅᴏ ᴜsᴇʀs !"
 
     else:
         status = "member"
@@ -36,12 +36,12 @@ def info(_, message):
         pfp_ = pfp[0]['thumbs'][0]['file_id']
 
     foo = bot.get_users(user)
-    data = f"""**First Name** : {foo.first_name}
-**Last Name**: {foo.last_name}
-**Telegram Id**: {foo.id}
-**PermaLink**: {foo.mention(foo.first_name)}
-**is_bot**: {foo.is_bot}
-**Status**: {status}
+    data = f"""**ғɪʀsᴛ ɴᴀᴍᴇ** : {foo.first_name}
+**ʟᴀsᴛ ɴᴀᴍᴇ**: {foo.last_name}
+**ᴛᴇʟᴇɢʀᴀᴍ ɪᴅ**: {foo.id}
+**ᴘᴇʀᴍᴀʟɪɴᴋ**: {foo.mention(foo.first_name)}
+**ɪs_ʙᴏᴛ**: {foo.is_bot}
+**sᴛᴀᴛᴜs**: {status}
 """
 
     if pfp_count != 0:
