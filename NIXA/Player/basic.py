@@ -39,7 +39,7 @@ def admeme_callback(_, query):
         query.message.edit(f'unbanned [{scammer}](tg://user?id={scammer})',
                            parse_mode='markdown')
     else:
-        message.reply('You are not admin!')
+        message.reply('ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ!')
 
 
 
@@ -55,7 +55,7 @@ def unban(_, message):
         if not is_admin(message.chat.id, message.from_user.id):
             message.reply("You aren't admin!")
         else:
-            message.reply("I can't unban that uset")
+            message.reply("ɪ ᴄᴀɴ'ᴛ ᴜɴʙᴀɴ ᴛʜᴀᴛ ᴜsᴇʀ")
     except Exception as e:
         message.reply(e)
 
@@ -68,11 +68,11 @@ def pin(_, message):
             bot.pin_chat_message(message.chat.id, message_id)
 
     elif not is_admin(message.chat.id, message.from_user.id):
-        message.reply("You're not admin")
+        message.reply("ʏᴏᴜ'ʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ")
     elif not message.reply_to_message:
-        message.reply("Reply to a message")
+        message.reply("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ")
     else:
-        message.reply("Make sure I'm admin and Can Pin Messages")
+        message.reply("ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴀᴅᴍɪɴ ᴀɴᴅ ᴄᴀɴ ᴘɪɴ ᴍᴇssᴀɢᴇs")
 
 
 @bot.on_message(filters.command('unpin'))
@@ -85,9 +85,9 @@ def unpin(_, message):
         message.reply("You're not admin")
     elif not message.reply_to_message:
 
-        message.reply("Reply to a message")
+        message.reply("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ")
     else:
-        message.reply("Make sure I'm admin and Can Pin Messages")
+        message.reply("ᴍᴀᴋᴇ sᴜʀᴇ ɪ'ᴍ ᴀᴅᴍɪɴ ᴀɴᴅ ᴄᴀɴ ᴘɪɴ ᴍᴇssᴀɢᴇs")
 
 
 
@@ -106,5 +106,5 @@ def purge(_, m: Message):
         m.reply("Reply to a Message!")
 
     else:
-        m.reply("reply to a message")
+        m.reply("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ")
 
