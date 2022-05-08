@@ -64,7 +64,7 @@ async def vraid(c: NIXA, m: Message):
     chat_id = chat.id
     if replied:
         if replied.video or replied.document:
-            loser = await replied.reply("📥 **downloading Raid file...**")
+            loser = await replied.reply("📥 **ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ʀᴀɪᴅ ғɪʟᴇ...**")
             dl = await replied.download()
             link = replied.link
             if len(m.command) < 2:
@@ -76,7 +76,7 @@ async def vraid(c: NIXA, m: Message):
                 else:
                     Q = 720
                     await loser.edit(
-                        "» __only 720, 480, 360 allowed__ \n💡 **now streaming video in 720p**"
+                        "» __ᴏɴʟʏ 720, 480, 360 ᴀʟʟᴏᴡᴇᴅ__ \n💡 **ɴᴏᴡ sᴛʀᴇᴀᴍɪɴɢ ᴠɪᴅᴇᴏ ɪɴ 720ᴘ**"
                     )
             try:
                 if replied.video:
@@ -93,7 +93,7 @@ async def vraid(c: NIXA, m: Message):
                 await m.reply_photo(
                     photo=thumbnail,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"💡 **Raid In Queue »** `{pos}`\n\n🗂 **Name:** [{songname}]({link}) | `video`\n💭 **Chat:** `{chat_id}`\n🧸 **Request by:** {requester}",
+                    caption=f"💡 **ʀᴀɪᴅ ɪɴ ǫᴜᴇᴜᴇ »** `{pos}`\n\n🗂 **ɴᴀᴍᴇ:** [{songname}]({link}) | `ᴠɪᴅᴇᴏ`\n💭 **ᴄʜᴀᴛ:** `{chat_id}`\n🧸 **ʀᴇǫᴜᴇsᴛ ʙʏ:** {requester}",
                 )
             else:
                 if Q == 720:
@@ -102,7 +102,7 @@ async def vraid(c: NIXA, m: Message):
                     amaze = MediumQualityVideo()
                 elif Q == 360:
                     amaze = LowQualityVideo()
-                await loser.edit("🔄 **Joining vc...**")
+                await loser.edit("🔄 **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                 await call_py.join_group_call(
                     chat_id,
                     AudioVideoPiped(
@@ -118,13 +118,13 @@ async def vraid(c: NIXA, m: Message):
                 await m.reply_photo(
                     photo=thumbnail,
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"🗂 **Raid:** [{songname}]({link}) | `video`\n💭 **Chat:** `{chat_id}`",
+                    caption=f"🗂 **ʀᴀɪᴅ:** [{songname}]({link}) | `ᴠɪᴅᴇᴏ`\n💭 **ᴄʜᴀᴛ:** `{chat_id}`",
                 )
         else:
             if len(m.command) < 2:
                 await m.reply_photo(
                      photo=f"{IMG_6}",
-                    caption="💬**Usage: /vraid (chat id @username) Your Query Ya Reply to a file To Raid in Chat**"
+                    caption="💬**ᴜsᴀɢᴇ: /vraid (ᴄʜᴀᴛ ɪᴅ @username) ʏᴏᴜʀ ǫᴜᴇʀʏ ʏᴀ ʀᴇᴘʟʏ ᴛᴏ ᴀ ғɪʟᴇ ᴛᴏ ʀᴀɪᴅ ɪɴ ᴄʜᴀᴛ**"
                     ,
                       reply_markup=InlineKeyboardMarkup(
                     [
@@ -135,13 +135,13 @@ async def vraid(c: NIXA, m: Message):
                 )
             )
             else:
-                loser = await c.send_message(chat_id, "🔍 **Searching...**")
+                loser = await c.send_message(chat_id, "🔍 **sᴇᴀʀᴄʜɪɴɢ...**")
                 query = m.text.split(None, 1)[1]
                 search = ytsearch(query)
                 Q = 720
                 amaze = HighQualityVideo()
                 if search == 0:
-                    await loser.edit("❌ **no results found.**")
+                    await loser.edit("❌ **ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ.**")
                 else:
                     songname = search[0]
                     title = search[0]
@@ -154,7 +154,7 @@ async def vraid(c: NIXA, m: Message):
                     image = await thumb(thumbnail, title, userid, ctitle)
                     veez, ytlink = await ytdl(url)
                     if veez == 0:
-                        await loser.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
+                        await loser.edit(f"❌ ʏᴛ-ᴅʟ ɪssᴜᴇs ᴅᴇᴛᴇᴄᴛᴇᴅ\n\n» `{ytlink}`")
                     else:
                         if chat_id in QUEUE:
                             pos = add_to_queue(
@@ -165,11 +165,11 @@ async def vraid(c: NIXA, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"💡 **Raid in Queue »** `{pos}`\n\n🗂 **Name:** [{songname}]({url}) | `video`\n⏱ **Duration:** `{duration}`\n🧸 **Chat:** {chat_id}",
+                                caption=f"💡 **ʀᴀɪᴅ ɪɴ ǫᴜᴇᴜᴇ »** `{pos}`\n\n🗂 **ɴᴀᴍᴇ:** [{songname}]({url}) | `ᴠɪᴅᴇᴏ`\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🧸 **ᴄʜᴀᴛ:** {chat_id}",
                             )
                         else:
                             try:
-                                await loser.edit("🔄 **Joining vc...**")
+                                await loser.edit("🔄 **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                                 await call_py.join_group_call(
                                     chat_id,
                                     AudioVideoPiped(
@@ -185,17 +185,17 @@ async def vraid(c: NIXA, m: Message):
                                 await m.reply_photo(
                                     photo=image,
                                     reply_markup=InlineKeyboardMarkup(buttons),
-                                    caption=f"🗂 **Raid:** [{songname}]({url}) | `video`\n⏱ **Duration:** `{duration}`\n🧸 **Chat:** {chat_id}",
+                                    caption=f"🗂 **ʀᴀɪᴅ:** [{songname}]({url}) | `ᴠɪᴅᴇᴏ`\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🧸 **ᴄʜᴀᴛ:** {chat_id}",
                                 )
                             except Exception as ep:
                                 await loser.delete()
-                                await m.reply_text(f"Started Raid on {chat_id}")
+                                await m.reply_text(f"sᴛᴀʀᴛᴇᴅ ʀᴀɪᴅ ᴏɴ {chat_id}")
 
     else:
         if len(m.command) < 2:
             await m.reply_photo(
                      photo=f"{IMG_6}",
-                    caption="💬**Usage: /vraid Give a Title Ya Replied Video File to Raid in A Chat**"
+                    caption="💬**ᴜsᴀɢᴇ: /vraid ɢɪᴠᴇ ᴀ ᴛɪᴛʟᴇ ᴏʀ ʀᴇᴘʟɪᴇᴅ ᴠɪᴅᴇᴏ ғɪʟᴇ ᴛᴏ ʀᴀɪᴅ ɪɴ ᴀ ᴄʜᴀᴛ**"
                     ,
                       reply_markup=InlineKeyboardMarkup(
                     [
@@ -206,13 +206,13 @@ async def vraid(c: NIXA, m: Message):
                 )
             )
         else:
-            loser = await c.send_message(chat_id, "🔍 **Searching...**")
+            loser = await c.send_message(chat_id, "🔍 **sᴇᴀʀᴄʜɪɴɢ...**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
             amaze = HighQualityVideo()
             if search == 0:
-                await loser.edit("❌ **no results found.**")
+                await loser.edit("❌ **ɴᴏ ʀᴇsᴜʟᴛs ғᴏᴜɴᴅ.**")
             else:
                 songname = search[0]
                 title = search[0]
@@ -225,7 +225,7 @@ async def vraid(c: NIXA, m: Message):
                 image = await thumb(thumbnail, title, userid, ctitle)
                 veez, ytlink = await ytdl(url)
                 if veez == 0:
-                    await loser.edit(f"❌ yt-dl issues detected\n\n» `{ytlink}`")
+                    await loser.edit(f"❌ ʏᴛ-ᴅʟ ɪssᴜᴇs ᴅᴇᴛᴇᴄᴛᴇᴅ\n\n» `{ytlink}`")
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
@@ -234,11 +234,11 @@ async def vraid(c: NIXA, m: Message):
                         await m.reply_photo(
                             photo=image,
                             reply_markup=InlineKeyboardMarkup(buttons),
-                            caption=f"💡 **Raid In Queue »** `{pos}`\n\n🗂 **Name:** [{songname}]({url}) | `video`\n⏱ **Duration:** `{duration}`\n🧸 **Chat:** {chat_id}",
+                            caption=f"💡 **ʀᴀɪᴅ ɪɴ ǫᴜᴇᴜᴇ »** `{pos}`\n\n🗂 **ɴᴀᴍᴇ:** [{songname}]({url}) | `ᴠɪᴅᴇᴏ`\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🧸 **ᴄʜᴀᴛ:** {chat_id}",
                         )
                     else:
                         try:
-                            await loser.edit("🔄 **Joining vc...**")
+                            await loser.edit("🔄 **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                             await call_py.join_group_call(
                                 chat_id,
                                 AudioVideoPiped(
@@ -254,11 +254,11 @@ async def vraid(c: NIXA, m: Message):
                             await m.reply_photo(
                                 photo=image,
                                 reply_markup=InlineKeyboardMarkup(buttons),
-                                caption=f"🗂 **Raid:** [{songname}]({url}) |`video`\n⏱ **Duration:** `{duration}`\n🧸 **Chat:** {chat_id}",
+                                caption=f"🗂 **ʀᴀɪᴅ:** [{songname}]({url}) |`ᴠɪᴅᴇᴏ`\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🧸 **ᴄʜᴀᴛ:** {chat_id}",
                             )
                         except Exception as ep:
                             await loser.delete()
-                            await m.reply_text(f"Started Raid on {chat_id}")
+                            await m.reply_text(f"sᴛᴀʀᴛᴇᴅ ʀᴀɪᴅ ᴏɴ {chat_id}")
 
 
 @NIXA.on_message(filters.user(SUDO_USERS) & filters.command(["vraidlive", "vraidstream"], prefixes=HNDLR))
@@ -268,12 +268,12 @@ async def raidlive(c: NIXA, m: Message):
     user_id = m.from_user.id
 
     if len(m.command) < 2:
-        await m.reply("» /vraidlive (chat id ya @Username) then give me a live-link/m3u8 url/youtube link to raidstream.")
+        await m.reply("» /vraidlive (ᴄʜᴀᴛ ɪᴅ ᴏʀ @Username) ᴛʜᴇɴ ɢɪᴠᴇ ᴍᴇ ᴀ ʟɪᴠᴇ-ʟɪɴᴋ/m3u8 ᴜʀʟ/ʏᴏᴜᴛᴜʙᴇ ʟɪɴᴋ ᴛᴏ ʀᴀɪᴅsᴛʀᴇᴀᴍ.")
     else:
         if len(m.command) == 2:
             link = m.text.split(None, 1)[1]
             Q = 720
-            loser = await c.send_message(chat_id, "🔄 **processing stream...**")
+            loser = await c.send_message(chat_id, "🔄 **ᴘʀᴏᴄᴇssɪɴɢ sᴛʀᴇᴀᴍ...**")
         elif len(m.command) == 3:
             op = m.text.split(None, 1)[1]
             link = op.split(None, 1)[0]
@@ -283,9 +283,9 @@ async def raidlive(c: NIXA, m: Message):
             else:
                 Q = 720
                 await m.reply(
-                    "» __only 720, 480, 360 allowed__ \n💡 **now streaming video in 720p**"
+                    "» __ᴏɴʟʏ 720, 480, 360 ᴀʟʟᴏᴡᴇᴅ__ \n💡 **ɴᴏᴡ sᴛʀᴇᴀᴍɪɴɢ ᴠɪᴅᴇᴏ ɪɴ 720ᴘ**"
                 )
-            loser = await c.send_message(chat_id, "🔄 **processing Liveraid...**")
+            loser = await c.send_message(chat_id, "🔄 **ᴘʀᴏᴄᴇssɪɴɢ ʟɪᴠᴇʀᴀɪᴅ...**")
         else:
             await m.reply("**/vraidlive {link} {720/480/360}**")
 
@@ -298,7 +298,7 @@ async def raidlive(c: NIXA, m: Message):
             veez = 1
 
         if veez == 0:
-            await loser.edit(f"❌ yt-dl issues detected\n\n» `{livelink}`")
+            await loser.edit(f"❌ ʏᴛ-ᴅʟ ɪssᴜᴇs ᴅᴇᴛᴇᴄᴛᴇᴅ\n\n» `{livelink}`")
         else:
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, "Live Stream", livelink, link, "Video", Q)
@@ -308,7 +308,7 @@ async def raidlive(c: NIXA, m: Message):
                 await m.reply_photo(
                     photo=f"{IMG_1}",
                     reply_markup=InlineKeyboardMarkup(buttons),
-                    caption=f"💡 **Raid In Queue »** `{pos}`\n\n💭 **Chat:** `{chat_id}",
+                    caption=f"💡 **ʀᴀɪᴅ ɪɴ ǫᴜᴇᴜᴇ »** `{pos}`\n\n💭 **ᴄʜᴀᴛ:** `{chat_id}",
                 )
             else:
                 if Q == 720:
@@ -318,7 +318,7 @@ async def raidlive(c: NIXA, m: Message):
                 elif Q == 360:
                     amaze = LowQualityVideo()
                 try:
-                    await loser.edit("🔄 **Joining vc...**")
+                    await loser.edit("🔄 **ᴊᴏɪɴɪɴɢ ᴠᴄ...**")
                     await call_py.join_group_call(
                         chat_id,
                         AudioVideoPiped(
@@ -334,8 +334,8 @@ async def raidlive(c: NIXA, m: Message):
                     await m.reply_photo(
                         photo=f"{IMG_2}",
                         reply_markup=InlineKeyboardMarkup(buttons),
-                        caption=f"💡 **[__Live Raid Started__]({link}) **\n\n💭 **Chat:** `{chat_id}`",
+                        caption=f"💡 **[__ʟɪᴠᴇ ʀᴀɪᴅ sᴛᴀʀᴛᴇᴅ__]({link}) **\n\n💭 **ᴄʜᴀᴛ:** `{chat_id}`",
                     )
                 except Exception as ep:
                     await loser.delete()
-                    await m.reply_text(f"Started Raid On {chat_id}")
+                    await m.reply_text(f"sᴛᴀʀᴛᴇᴅ ʀᴀɪᴅ ᴏɴ {chat_id}")
