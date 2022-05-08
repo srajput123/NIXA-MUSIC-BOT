@@ -17,7 +17,7 @@ deadlyversion = 'Spambot0.10'
 NIXA_PIC = "https://te.legra.ph/file/458d42a851b8ec54f865d.jpg"
   
 
-DEADLY = "✯ ᴍᴜsɪᴄ+ʀᴀɪᴅ sᴘᴀᴍ ʙɪᴛ ✯\n\n"
+DEADLY = "✯ ᴍᴜsɪᴄ+ʀᴀɪᴅ sᴘᴀᴍ ʙᴏᴛ ✯\n\n"
 DEADLY += f"═══════════════════\n"
 DEADLY += f"• **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.10.1`\n"
 DEADLY += f"• **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `{version.__version__}`\n"
@@ -75,14 +75,14 @@ async def ping(e):
         event = await e.reply(text, parse_mode=None, link_preview=None )
         end = datetime.now()
         ms = (end-start).microseconds / 1000
-        await event.edit(f"🎉 𝗣 𝗢 𝗡 𝗚 !\n\n♡︎ `{ms}` 𝗺𝘀 ♡︎")
+        await event.edit(f"🎉 𝗣 𝗢 𝗡 𝗚 !\n\n♡︎ `{ms}` ᴍs ♡︎")
         
         
 
 @BOT.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
 async def restart(e):
     if e.sender_id in SUDO_USERS:
-        text = "**Rebooting ↪️**.. Please Wait Until It Starts Again"
+        text = "**ʀᴇʙᴏᴏᴛɪɴɢ ↪️**.. ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴜɴᴛɪʟ ɪᴛ sᴛᴀʀᴛs ᴀɢᴀɪɴ"
         await e.reply(text, parse_mode=None, link_preview=None)
         try:
             await BOT.disconnect()
@@ -101,12 +101,12 @@ sudousers = os.environ.get("SUDO_USER", None)
 @BOT.on(events.NewMessage(incoming=True, pattern=r"\%saddsudo(?: |$)(.*)" % hl))
 async def tb(event):
     if event.sender_id == OWNER_ID:
-        ok = await event.reply("Adding user as a sudo...")
+        ok = await event.reply("ᴀᴅᴅɪɴɢ ᴜsᴇʀ ᴀs ᴀ sᴜᴅᴏ...")
         DEADLY = "SUDO_USER"
         if HEROKU_APP_NAME is not None:
             app = Heroku.app(HEROKU_APP_NAME)
         else:
-            await ok.edit("`[HEROKU]:" "\nPlease setup your` **HEROKU_APP_NAME**")
+            await ok.edit("`[HEROKU]:" "\ɴᴘʟᴇᴀsᴇ sᴇᴛᴜᴘ ʏᴏᴜʀ` **ʜᴇʀᴏᴋᴜ_ᴀᴘᴘ_ɴᴀᴍᴇ**")
             return
         heroku_var = app.config()
         if event is None:
@@ -114,12 +114,12 @@ async def tb(event):
         try:
             target = await get_user(event)
         except Exception:
-            await ok.edit(f"Reply to a user.")
+            await ok.edit(f"ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ.")
         if sudousers:
             newsudo = f"{sudousers} {target}"
         else:
             newsudo = f"{target}"
-        await ok.edit(f"**Added `{target}` ** as a sudo user 🔱 Restarting.. Please wait a minute...")
+        await ok.edit(f"**ᴀᴅᴅᴇᴅ `{target}` ** ᴀs ᴀ sᴜᴅᴏ ᴜsᴇʀ 🔱 ʀᴇsᴛᴀʀᴛɪɴɢ.. ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ ᴀ ᴍɪɴᴜᴛᴇ...")
         heroku_var[DEADLY] = newsudo   
    
      
